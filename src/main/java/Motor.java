@@ -1,14 +1,14 @@
 public class Motor {
-    // Atributos privados conforme o diagrama
+    // Atributo
     private int qtdPist;
     private int potencia;
 
-    // Construtor Default (Requisito 2.a e 3.b)
+    //Default (Requisito 2.a e 3.b)
     public Motor() {
-        // Atributos numerais iniciam com 0
+        // Atributos numerais
         this.qtdPist = 0;
         this.potencia = 0;
-        // Não há atributos literais nesta classe, então o requisito para String/char não se aplica aqui.
+       
     }
 
     // Métodos Getters e Setters (Requisito 3.a)
@@ -28,7 +28,7 @@ public class Motor {
         this.potencia = potencia;
     }
 
-    // Método auxiliar para impressão (Requisito: Novos métodos podem ser criados)
+    // Método auxiliar (Requisito: Novos métodos podem ser criados)
     public void imprimirDadosMotor() {
         System.out.println("--- Dados do Motor ---");
         System.out.println("Quantidade de Pistões: " + this.qtdPist);

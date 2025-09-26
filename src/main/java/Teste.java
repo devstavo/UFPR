@@ -3,23 +3,23 @@ import java.util.Scanner;
 public class Teste {
 
     public static void main(String[] args) {
-        // Requisito 2.b e 3.d: Instanciar 5 veículos em um array
-        // Cardinalidade: Teste (1) -> Veiculo (5)
+        // 2.b e 3.d
+        // Teste (1) -> Veiculo (5)
         Veiculo[] frota = new Veiculo[5];
         
-        // Objeto Scanner para entrada de dados
+        //entrada de dados
         Scanner scanner = new Scanner(System.in);
 
-        // Laço de repetição para instanciar e preencher os dados dos 5 veículos (Requisito 3.f)
+        // Laço de repetição para instanciar (Requisito 3.f)
         for (int i = 0; i < 5; i++) {
-            System.out.println("\n=============================================");
+        
             System.out.println("ENTRADA DE DADOS - VEÍCULO " + (i + 1) + " de 5");
-            System.out.println("=============================================");
+        
             
-            // 1. Instancia o objeto Veiculo (Requisito 3.c)
+            //  Instancia o objeto Veiculo (Requisito 3.c)
             frota[i] = new Veiculo(); 
             
-            // 2. Entrada de dados do Veículo
+            // Entrada de dados do Veículo
             System.out.print("Digite a Placa: ");
             frota[i].setPlaca(scanner.nextLine());
 
@@ -32,7 +32,7 @@ public class Teste {
             System.out.print("Digite a Cor: ");
             frota[i].setCor(scanner.nextLine());
             
-            // Tratamento de entrada para numerais (Requisito 3.f)
+            // Tratamento de entrada (Requisito 3.f)
             float velocMax = 0.0f;
             System.out.print("Digite a Velocidade Máxima (float): ");
             while (true) {
@@ -57,16 +57,16 @@ public class Teste {
                 }
             }
             
-            // 3. Entrada de dados do Motor (Requisito 2.c e 3.e)
-            // Acesso aos atributos do Motor APENAS por meio do objeto Veiculo.
-            System.out.println("\n** Dados do Motor **");
+            // 3. Entrada dados do Motor (Requisito 2.c e 3.e)
+            // Acesso ao atributo do Motor pormeio do objeto Veiculo.
+            System.out.println("\n Dados do Motor ");
 
             int qtdPist = 0;
             System.out.print("Digite a Quantidade de Pistões (int): ");
             while (true) {
                 try {
                     qtdPist = Integer.parseInt(scanner.nextLine());
-                    // Chama o getter do Veiculo para obter o objeto Motor, e em seguida chama o setter do Motor
+                    // Chama o getter do Veiculo e Motor
                     frota[i].getMotor().setQtdPist(qtdPist); 
                     break;
                 } catch (NumberFormatException e) {
@@ -79,7 +79,7 @@ public class Teste {
             while (true) {
                 try {
                     potencia = Integer.parseInt(scanner.nextLine());
-                    // Chama o getter do Veiculo para obter o objeto Motor, e em seguida chama o setter do Motor
+                    // Chama o getter do Veiculo
                     frota[i].getMotor().setPotencia(potencia); 
                     break;
                 } catch (NumberFormatException e) {
@@ -88,18 +88,16 @@ public class Teste {
             }
         }
 
-        // Fim da entrada de dados
+        // Fim da entrada
         scanner.close();
 
-        // Impressão dos dados dos 5 veículos (Requisito 3.c)
-        System.out.println("\n\n********************************************************");
-        System.out.println("RELATÓRIO FINAL: VEÍCULOS E MOTORES CADASTRADOS");
-        System.out.println("********************************************************");
-        
-        // Laço de repetição para percorrer e imprimir os dados
+        // Impressão dos dados (Requisito 3.c)
+        System.out.println("RELATÓRIO: VEÍCULOS E MOTORES CADASTRADOS");
+
+        // Laço de repetição
         for (int i = 0; i < frota.length; i++) {
             System.out.println("DADOS DO VEÍCULO " + (i + 1));
-            // Chamada ao método de impressão que exibe Veiculo E Motor
+            // Chamada ao método de impressão
             frota[i].imprimirDadosVeiculo(); 
         }
     }

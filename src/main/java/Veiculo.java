@@ -1,5 +1,5 @@
 public class Veiculo {
-    // Atributos privados conforme o diagrama
+    // Atributos privados
     private String placa;
     private String marca;
     private String modelo;
@@ -7,27 +7,26 @@ public class Veiculo {
     private float velocMax; // Numeral (float)
     private int qtdRodas; // Numeral (int)
 
-    // Atributo de Composição (Veiculo POSSUI Motor - Requisitos 2.c, 2.d e 3.e)
+    // Atributo de Composição Requisitos 2.c, 2.d e 3.e)
     private Motor motor;
 
-    // Construtor Default (Requisito 2.a e 3.b)
+    //Default (Requisito 2.a e 3.b)
     public Veiculo() {
-        // Atributos numerais iniciam com 0
+        // Atributos numerais
         this.velocMax = 0.0f;
         this.qtdRodas = 0;
         
-        // Atributos literais iniciam com espaço em branco (“ “)
+        // Atributos literais
         this.placa = " ";
         this.marca = " ";
         this.modelo = " ";
         this.cor = " ";
         
-        // Instancia o objeto motor (garantindo que o Veiculo está completo e evitando NullPointerException)
-        // O motor será inicializado com seus valores default (0, 0)
+        
         this.motor = new Motor(); 
     }
 
-    // Métodos Getters e Setters (Requisito 3.a)
+    // Getters e Setters (Requisito 3.a)
     public String getPlaca() {
         return placa;
     }
@@ -76,17 +75,17 @@ public class Veiculo {
         this.qtdRodas = qtdRodas;
     }
 
-    // Getter para o objeto Motor (Essencial para o Requisito 2.c)
+    // Getter  (Essencial para o Requisito 2.c)
     public Motor getMotor() {
         return motor;
     }
 
-    // Setter para o objeto Motor (Opcional)
+    // Setter  (Opcional)
     public void setMotor(Motor motor) {
         this.motor = motor;
     }
     
-    // Método auxiliar para impressão (Requisito: Novos métodos podem ser criados)
+    //Auxiliar para impressão (Requisito: Novos métodos podem ser criados)
     public void imprimirDadosVeiculo() {
         System.out.println("\n--------------------------------------");
         System.out.println("### DADOS DO VEÍCULO:");
@@ -97,7 +96,7 @@ public class Veiculo {
         System.out.println("Velocidade Máxima: " + this.velocMax + " km/h");
         System.out.println("Quantidade de Rodas: " + this.qtdRodas);
         
-        // Chama o método do objeto Motor (Composição)
+        // Chama o método  
         if (this.motor != null) {
             this.motor.imprimirDadosMotor();
         } else {
